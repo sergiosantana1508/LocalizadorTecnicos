@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Localizador de Técnicos</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="topo-conteudo">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h1>Localizador de Técnicos</h1>
+
+                    <span>Encontre o profissional mais próximo</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+
+
+    <main class="container">
+
+
+        <!-- PESQUISA -->
+
+        <section class="card pesquisa">
+
+            <h2>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Buscar endereço
+
+            </h2>
+
+            <label for="endereco">
+
+                Informe o endereço do cliente
+
+            </label>
+
+            <div class="campo-busca">
+
+                <input
+                    type="text"
+                    id="endereco"
+                    placeholder="Ex: Guarulhos - SP">
+
+                <button id="btnLocalizar">
+
+                    <i class="fa-solid fa-location-crosshairs"></i>
+
+                    Localizar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- GRID -->
+
+        <section class="grid-principal">
+
+
+
+            <!-- LADO ESQUERDO -->
+
+            <div class="coluna-esquerda">
+
+                <div class="card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-map-location-dot"></i>
+
+                        Mapa
+
+                    </h2>
+
+                    <div id="mapa"></div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- LADO DIREITO -->
+
+            <div class="coluna-direita">
+
+
+
+
+                <!-- TÉCNICO -->
+
+                <div class="card destaque">
+
+                    <h2>
+
+                        <i class="fa-solid fa-user-gear"></i>
+
+                        Técnico Mais Próximo
+
+                    </h2>
+
+                    <div class="resultado">
+
+                        <div class="info">
+
+                            <span>Nome</span>
+
+                            <strong id="nomeTecnico">-</strong>
+
+                        </div>
+
+                        <div class="info">
+
+                            <span>Endereço</span>
+
+                            <strong id="enderecoTecnico">-</strong>
+
+                        </div>
+
+                        <div class="info">
+
+                            <span>Cidade</span>
+
+                            <strong id="cidadeTecnico">-</strong>
+
+                        </div>
+
+                        <div class="info">
+
+                            <span>Telefone</span>
+
+                            <strong id="telefoneTecnico">-</strong>
+
+                        </div>
+
+                        <div class="info">
+
+                            <span>Distância / Tempo</span>
+
+                            <strong id="distanciaTecnico">-</strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="botoes-acoes">
+
+                        <button
+                            id="btnRota"
+                            class="botao-rota"
+                            style="display:none;">
+
+                            <i class="fa-solid fa-route"></i>
+
+                            Abrir Rota
+
+                        </button>
+
+
+
+                        <button
+                            id="btnWhatsapp"
+                            class="botao-whatsapp"
+                            style="display:none;">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            WhatsApp
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- LISTA -->
+
+                <div class="card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-list"></i>
+
+                        Técnicos por Distância
+
+                    </h2>
+
+                    <div id="listaTecnicos"></div>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Leaflet -->
+
+    <script
+src="https://unpkg.com/leaflet/dist/leaflet.js">
+</script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+
+</html>
